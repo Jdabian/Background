@@ -1,0 +1,131 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url(
+"https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary: rgba(120, 57, 168, 0.368);
+  --clr-secundary: rgba(5, 30, 26, 0.847);
+  --clr-white: rgb(255, 255, 255);
+  --clr-bg:  rgb(0, 28, 80);
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --fz-primary: 0.875rem;
+  --transition: all 0.3s linear;
+  --radius: 0.25rem;
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-bg);
+  color: var(--clr-white);
+  font-size: var(--fz-primary);
+
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {font-size: 3rem --clr-white;}
+h2 {font-size: 1.5rem --clr-white;}
+h3 {font-size: 1.25rem --clr-white;}
+h4 {font-size: 4rem --clr-white;;}
+
+/*
+=============== 
+Container
+===============
+*/
+.main{
+  display: grid;
+  grid-template-columns: 35% 50% 15%;
+  min-height: calc(100vh - 3rem);
+  place-items: start;
+  padding: 10px 5px 10px 5px ;
+}
+.main > h2 {
+  grid-column: 1 / 2;
+  background: var(--clr-primary);
+  color: var(--clr-secundary);
+  padding: 1rem;
+  border: 0.5px solid var(--clr-primary);
+  border-radius: var(--radius);
+}
+
+.btn-hero {
+  grid-column: 3;
+  color: var(--clr-primary);
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  background: var(--clr-primary);
+  color: var(--clr-secundary);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  border: 0.5px solid var(--clr-primary);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+}
+.btn-hero:hover {
+  color: var(--clr-white);
+  background: var(--clr-primary);
+}
+
+/*
+=============== 
+Media Queries
+===============
+*/
+
+@media only screen and (max-width: 600px){
+  .main{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    text-align: center;
+    align-items: center;
+  }
+}
